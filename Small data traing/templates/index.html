@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mudra Detection</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .video-box {
+            border: 3px solid #22c55e;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .info-box {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: left;
+        }
+
+        .label {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #22c55e;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #22c55e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🖐️ Mudra Detection System</h1>
+
+<div class="container">
+
+    <div class="video-box">
+        <img id="video" src="{{ url_for('video') }}" width="640">
+    </div>
+
+    <div class="info-box">
+        <div class="label">Prediction:</div>
+        <div id="prediction" class="value">--</div>
+
+        <div class="label">Correction:</div>
+        <div id="correction" class="value">--</div>
+
+        <button onclick="toggleCamera()">Start / Stop</button>
+    </div>
+
+</div>
+
+<script>
+let running = true;
+
+function toggleCamera() {
+    const img = document.getElementById("video");
+    if (running) {
+        img.src = "";
+    } else {
+        img.src = "/video";
+    }
+    running = !running;
+}
+</script>
+
+</body>
+</html>
