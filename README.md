@@ -161,3 +161,7 @@ This project was developed by a team of four members as part of our final-year p
 Gobinath S
 
 Computer Science and Engineering
+
+## Demo
+
+![Bharatanatyam Mudra Detection Demo](mudra-demo-thumbnail.png)
